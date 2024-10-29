@@ -14,7 +14,6 @@ namespace ИСРПО_Практ_1
             Console.WriteLine("Введите количество строк:");
             if (int.TryParse(Console.ReadLine(), out int n))
             {
-
                 Console.WriteLine("Введите количество столбцов:");
                 if (int.TryParse(Console.ReadLine(), out int m))
                 {
@@ -35,12 +34,15 @@ namespace ИСРПО_Практ_1
             {
                 for (int j = 0; j < m; j++)
                 {
-                    matrix[i, j] = Math.Sin(i + (j / 12));
+                    matrix[i, j] = Math.Sin((i + j) / 2);
+                    Console.Write(matrix[i, j]);
+
                     if (matrix[i, j] > 0)
                     {
                         polozElem++;
                     }
                 }
+                Console.WriteLine();
             }
             Console.WriteLine("Количество положительных элементов в матрице:" + polozElem);
             return matrix;
